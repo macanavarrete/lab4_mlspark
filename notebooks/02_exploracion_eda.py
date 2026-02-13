@@ -21,11 +21,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 # %%
 # Configurar SparkSession
 spark = SparkSession.builder \
     .appName("SECOP_EDA") \
-    .master("spark://spark-master:7077") \
+    .master("local[*]") \
     .config("spark.executor.memory", "2g") \
     .getOrCreate()
 
